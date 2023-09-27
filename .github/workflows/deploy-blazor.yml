@@ -3,11 +3,11 @@ name: Build and deploy - Blazor
 on:
   push:
     branches:
-      - main
+      - mainOFF
   pull_request:
     types: [ opened, synchronize, reopened, closed ]
     branches:
-      - main
+      - mainOFF
 
 jobs:
   build_and_deploy_job:

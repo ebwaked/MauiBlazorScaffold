@@ -6,7 +6,7 @@ name: Build and deploy - WebApi
 on:
   push:
     branches:
-      - main
+      - mainOFF
   workflow_dispatch:
 
 jobs:
