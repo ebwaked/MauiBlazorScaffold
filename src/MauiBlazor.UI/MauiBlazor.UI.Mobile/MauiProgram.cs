@@ -20,9 +20,14 @@ public static class MauiProgram
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
+        // The following removes cert validation for TESTING only 
+        //var handler = new HttpClientHandler();
+        //handler.ServerCertificateCustomValidationCallback = (message, certificate, chain, sslPolicyErrors) => true;
+        //var httpClient = new HttpClient(handler);
+
         var httpClient = new HttpClient();
 
-        builder.Services.AddScoped<IWeatherForecastClient>(_ => new WeatherForecastClient("https://localhost:7136", httpClient));
+        builder.Services.AddScoped<IWeatherForecastClient>(_ => new WeatherForecastClient("https://10.0.2.2:5000", httpClient));
         builder.Services.AddScoped<IPlatformService, PlatformService>();
 
 
