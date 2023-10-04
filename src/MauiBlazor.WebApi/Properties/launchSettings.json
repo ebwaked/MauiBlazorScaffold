@@ -9,6 +9,16 @@
     }
   },
   "profiles": {
+    "WebApiLocal": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:6911",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
     "WebApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,

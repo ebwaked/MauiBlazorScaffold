@@ -21,7 +21,9 @@ app.UseSwaggerUi3(settings => settings.DocumentPath = "/api/v1/specification.jso
 
 // Configure the HTTP request pipeline.
 
+#if !DEBUG
 app.UseHttpsRedirection();
+#endif
 
 app.UseAuthorization();
 

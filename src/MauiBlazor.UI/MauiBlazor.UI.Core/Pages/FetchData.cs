@@ -13,7 +13,14 @@ public partial class FetchData
 
     protected override async Task OnInitializedAsync()
     {
-        var result = await Client.GetAsync();
-        _forecasts = result.ToList();
+        try
+        {
+            var result = await Client.GetAsync();
+            _forecasts = result.ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
     }
 }
