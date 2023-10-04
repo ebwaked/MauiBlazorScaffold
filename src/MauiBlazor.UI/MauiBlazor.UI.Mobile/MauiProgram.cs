@@ -30,6 +30,7 @@ public static class MauiProgram
         apiUrl = "https://10.0.2.2:6900";
 #endif
         builder.Services.AddScoped<IWeatherForecastClient>(_ => new WeatherForecastClient(apiUrl, httpClient));
+        builder.Services.AddScoped<IStockForecastClient>(_1 => new StockForecastClient(apiUrl, httpClient));
         builder.Services.AddScoped<IPlatformService, PlatformService>();
 
         builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri(apiUrl) });
