@@ -1,7 +1,19 @@
 ﻿@using MauiBlazor.UI.Core.Shared
+@using Microsoft.AspNetCore.Components.Authorization
+
+<CascadingAuthenticationState>
 <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="new[] {typeof(MainLayout).Assembly}">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            @* <AccessControl RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <Authorizing>
+                    <p>Determining session state, please wait...</p>
+                </Authorizing>
+                <NotAuthorized>
+                    <h1>Sorry</h1>
+                    <p>You're not authorized to reach this page. You need to log in.</p>
+                </NotAuthorized>
+            </AccessControl> *@
         <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
     </Found>
     <NotFound>
@@ -11,3 +23,4 @@
         </LayoutView>
     </NotFound>
 </Router>
+</CascadingAuthenticationState>
